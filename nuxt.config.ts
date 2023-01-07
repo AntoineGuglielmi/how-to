@@ -7,4 +7,11 @@ export default defineNuxtConfig({
   indexes: {
     from: []
   },
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+  css: ['~/assets/css/main.css'],
 })
