@@ -9,5 +9,9 @@
   },
   "devDependencies": {
     "nuxt": "3.0.0"
+  },
+  "dependencies": {
+    "indexes-ts": "^1.0.0",
+    "nuxt-reactive-form": "^1.2.4"
   }
 }
