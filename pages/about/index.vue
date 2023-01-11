@@ -3,8 +3,5 @@
 </script>
 
 <template>
-	<Nav />
-  <Container>
-		<slot />
-	</Container>
+	<h1>About</h1>
 </template>

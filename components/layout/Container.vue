@@ -3,8 +3,7 @@
 </script>
 
 <template>
-	<Nav />
-  <Container>
+  <div class="container mx-auto px-4">
 		<slot />
-	</Container>
+	</div>
 </template>

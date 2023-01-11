@@ -4,6 +4,15 @@ export default defineNuxtConfig({
     'indexes-ts',
     'nuxt-reactive-form'
   ],
+  components: {
+    "dirs": [
+      {
+        "path": "~/components/layout",
+        "global": true
+      },
+      "~/components"
+    ]
+  },
   indexes: {
     from: []
   },
