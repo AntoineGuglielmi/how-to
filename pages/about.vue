@@ -3,8 +3,5 @@
 </script>
 
 <template>
-	<Nav />
-  <Container>
-		<slot />
-	</Container>
+  <NuxtPage />
 </template>
