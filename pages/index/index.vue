@@ -32,5 +32,8 @@ const colorPalette2 = {
 
 <!--		</div>-->
 <!--	</template>-->
-	<p v-for="x in 10" class="my-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam assumenda corporis eaque eos facere iusto, maxime minima necessitatibus non nostrum odio quia quibusdam quis reprehenderit saepe sequi similique temporibus voluptatem.</p>
+	<p
+		v-for="x in 10" class="my-8"
+	>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam assumenda corporis eaque eos facere iusto,
+		maxime minima necessitatibus non nostrum odio quia quibusdam quis reprehenderit saepe sequi similique temporibus voluptatem.</p>
 </template>

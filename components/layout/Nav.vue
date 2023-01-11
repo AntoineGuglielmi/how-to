@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 const navLinks = [
-	{
-		text: 'About',
-		href: '/about'
-	}
+	// {
+	// 	text: 'About',
+	// 	href: '/about'
+	// }
 ]
 </script>
 
@@ -14,7 +14,7 @@ const navLinks = [
 				<NuxtLink to="/">
 					<p class="text-xl">Home</p>
 				</NuxtLink>
-				<ul class="flex gap-4">
+				<ul v-if="navLinks.length" class="flex gap-4">
 					<li
 						v-for="(link, index) in navLinks"
 						:key="index"
