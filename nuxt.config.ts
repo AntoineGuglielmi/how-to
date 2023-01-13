@@ -1,8 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
-    'indexes-ts',
-    'nuxt-reactive-form'
+    'nuxt-indexes-ts',
+    'nuxt-reactive-form',
+    '@pinia/nuxt'
   ],
   components: {
     "dirs": [
@@ -10,11 +11,17 @@ export default defineNuxtConfig({
         "path": "~/components/layout",
         "global": true
       },
-      "~/components"
+      {
+        "path": "~/components/howto",
+        "global": true
+      },
+      // "~/components"
     ]
   },
   indexes: {
-    from: []
+    from: [{
+      dirs: ['./store']
+    }]
   },
   postcss: {
     plugins: {

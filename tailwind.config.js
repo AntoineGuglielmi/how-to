@@ -14,7 +14,8 @@ module.exports = {
         xxl: '2rem'
       },
       fontFamily: {
-        'nunito': 'Nunito, sans-serif'
+        'nunito': 'Nunito, sans-serif',
+        'code': 'JetBrains Mono'
       },
       colors: {
         'howToViolet': {

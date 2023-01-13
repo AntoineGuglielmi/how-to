@@ -14,7 +14,8 @@
     "tailwindcss": "^3.2.4"
   },
   "dependencies": {
-    "indexes-ts": "^1.0.0",
+    "@pinia/nuxt": "^0.4.6",
+    "nuxt-indexes-ts": "^1.1.0",
     "nuxt-reactive-form": "^1.2.4"
   }
 }
