@@ -33,7 +33,7 @@ const copy = () => {
 </script>
 
 <template>
-	<div class="relative bg-howToBrown-900 rounded-[0.25rem] p-4 my-4">
+	<div class="relative bg-black/25 rounded-[0.25rem] p-4 my-4">
 		<header class="flex">
 			<code class="text-white/50 text-[0.75rem] italic" v-if="fileName">{{ fileName }}</code>
 			<button

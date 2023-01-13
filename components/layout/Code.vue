@@ -9,7 +9,7 @@ const props = withDefaults(defineProps<{
 
 const codeClasses = computed(() => {
 	return {
-		'bg-howToBrown-900 rounded-[0.25rem] px-1 py-[0.075rem] inline': props.isAlone
+		'bg-black/25 rounded-[0.25rem] px-1 py-[0.075rem] inline': props.isAlone
 	}
 });
 </script>
