@@ -1,6 +1,7 @@
 import { defineNuxtPlugin } from '#app'
-import { MainStore } from '~/store';
+import { CodesStore } from '~/store';
 
 export default defineNuxtPlugin(async (nuxtApp) => {
-  await MainStore(nuxtApp.$pinia).init();
+  console.log(`Trying to load all codes`);
+  await CodesStore(nuxtApp.$pinia).init();
 });

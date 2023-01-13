@@ -8,3 +8,7 @@
 @layer components {
 
 }
+
+code {
+  @apply font-code whitespace-pre-wrap text-[0.9rem] text-white/75
+}

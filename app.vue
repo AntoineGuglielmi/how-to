@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-// import { MainStore } from '~/store';
-// await MainStore().init();
+
 </script>
 
 <template>

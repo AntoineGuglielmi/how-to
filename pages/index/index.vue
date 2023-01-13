@@ -6,6 +6,9 @@
 </script>
 
 <template>
+	<Head>
+		<Title>How to</Title>
+	</Head>
 	<Hero />
 	<List
 		:items="topics"
