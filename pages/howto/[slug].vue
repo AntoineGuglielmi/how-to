@@ -1,15 +1,24 @@
 <script lang="ts" setup>
- import { TopicsStore } from '~/store';
- const {
-	 getTopicFromRoute
- } = TopicsStore();
- const route = useRoute();
- const topic = getTopicFromRoute(route);
- const component = defineAsyncComponent(() => import(`../../components/howto/${topic.component}.vue`))
+	import { TopicsStore } from '~/store';
+	const {
+		getTopicFromRoute
+	} = TopicsStore();
+	const route = useRoute();
+	const topic = getTopicFromRoute(route);
+	const title = computed(() => {
+		return topic.title;
+	});
+	const metaTitle = computed(() => {
+		return title.value.slice(0,1).toLowerCase() + title.value.slice(1);
+	});
+	const component = defineAsyncComponent(() => import(`../../components/howto/${topic.component}.vue`))
 </script>
 
 <template>
-	<Title1>{{ topic.title }}</Title1>
+	<Head>
+		<Title>How to: {{ metaTitle }}</Title>
+	</Head>
+	<Title1>{{ title }}</Title1>
 	<component
 		:is="component"
 	/>

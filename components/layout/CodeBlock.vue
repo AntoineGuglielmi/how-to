@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { MainStore } from '~/store';
+import { CodesStore } from '~/store';
 const {
 	code: getCode
-} = MainStore();
+} = CodesStore();
 
 const props = withDefaults(defineProps<{
 	fileName?: string;
@@ -43,7 +43,6 @@ const copy = () => {
 		</header>
 		<code
 			ref="code"
-			class="whitespace-pre-wrap font-code text-[0.9rem]"
 		>{{getCode(content)}}</code>
 	</div>
 </template>

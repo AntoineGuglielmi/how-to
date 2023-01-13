@@ -1,2 +1,2 @@
-export * from './MainStore';
+export * from './CodesStore';
 export * from './TopicsStore';
