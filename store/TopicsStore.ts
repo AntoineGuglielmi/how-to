@@ -10,11 +10,20 @@ export const TopicsStore = defineStore('topics', (): ITopicsStore => {
     {
       title: 'Import and use Google fonts in Nuxt3/Tailwind project',
       component: 'GoogleFont',
-      href: '/howto/import-and-use-google-fonts-nuxt3-tailwind',
       to: {
         name: 'howto-slug',
         params: {
           slug: 'import-and-use-google-fonts-nuxt3-tailwind',
+        }
+      }
+    },
+    {
+      title: 'Fill Pinia store on server side and use it on client side',
+      component: 'ServerStoreClient',
+      to: {
+        name: 'howto-slug',
+        params: {
+          slug: 'fill-store-server-use-client',
         }
       }
     }
