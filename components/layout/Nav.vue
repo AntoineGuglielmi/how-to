@@ -19,7 +19,7 @@ const navLinks = [
 						v-for="(link, index) in navLinks"
 						:key="index"
 					>
-						<NuxtLink :to="link.href">{{ link.text }}</NuxtLink>
+						<NuxtLink :to="link.to">{{ link.text }}</NuxtLink>
 					</li>
 				</ul>
 			</div>

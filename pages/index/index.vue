@@ -11,6 +11,7 @@
 	</Head>
 	<Hero />
 	<List
+		class="flex flex-col gap-4"
 		:items="topics"
 		itemsNick="topic"
 	>
