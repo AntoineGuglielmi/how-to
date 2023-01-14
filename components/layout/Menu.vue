@@ -6,17 +6,19 @@
 	const search = ref('');
 
 	const topics = computed(() => {
-		return [].concat(...TopicsStore().topics.filter(topic => {
+		return [].concat(...TopicsStore().topics.filter((topic: any) => {
 			return topic.title.toLowerCase().includes(search.value.toLowerCase());
-		}).map(topic => {
-			return [ {
-				type: 'sepa',
-				value: ''
-			},
+		}).map((topic: any) => {
+			return [
+				{
+					type: 'sepa',
+					value: ''
+				},
 				{
 					type: 'topic',
 					value: topic
-				}];
+				}
+			];
 		}));
 	});
 
@@ -24,7 +26,7 @@
 	const button = ref(null);
 
 	const blur = (event: any) => {
-		!event.relatedTarget && (show.value = !show.value);
+		!event.relatedTarget && (show.value = false);
 	}
 
 	const clickLink = () => {
@@ -51,7 +53,7 @@
 
 	<div
 		v-if="show"
-		class="absolute top-[calc(100%+15px)] bg-howToPurple-900 border border-white/25 rounded-[0.25rem] shadow-reg min-w-[450px]"
+		class="absolute top-[calc(100%+15px)] bg-howToPurple-900 border border-white/25 rounded-[0.25rem] shadow-reg w-[calc(full-1rem)] max-w-[450px]"
 		@focusout="blur"
 	>
 		<ul>
