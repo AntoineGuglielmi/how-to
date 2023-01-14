@@ -32,6 +32,7 @@
 			button.value.focus();
 		}
 		show.value = !show.value;
+		search.value = '';
 	}
 
 </script>
