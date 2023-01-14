@@ -12,10 +12,10 @@ const props = withDefaults(defineProps<{
 	content: ''
 });
 
-const code = ref(null);
+const code = ref<null|HTMLElement>(null);
 
 const copy = () => {
-	const copiedText = code?.value.innerText ?? '';
+	const copiedText = code.value?.innerText ?? '';
 	const el = document.createElement('textarea');
 	el.value = copiedText;
 	document.body.appendChild(el);
@@ -23,12 +23,6 @@ const copy = () => {
 	document.execCommand('copy');
 	document.body.removeChild(el);
 }
-
-// const test = ref('');
-// if(process.server) {
-// 	const fs = await import('fs');
-// 	test.value = fs.readFileSync(`./code/${props.content}.txt`).toString();
-// }
 
 </script>
 
@@ -41,8 +35,10 @@ const copy = () => {
 				@click.prevent="copy"
 			>Copy</button>
 		</header>
-		<code
-			ref="code"
-		>{{getCode(content)}}</code>
+		<div class="overflow-x-scroll scrollbar scrollbar-h-[4px] scrollbar-thumb-howToPurple-700 scrollbar-track-howToPurple-800 pb-2 scrollbar-rounded-[2px]">
+			<code
+				ref="code"
+			>{{ getCode(content) }}</code>
+		</div>
 	</div>
 </template>

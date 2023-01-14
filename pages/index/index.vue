@@ -18,9 +18,9 @@
 		<template v-slot="{ topic }">
 			<NuxtLink
 				:to="topic.to"
-				class="block text-xxl text-white bg-black/25 p-8 rounded-[0.25rem]"
+				class="block bg-black/25 p-8 rounded-[0.25rem]"
 			>
-				<h2>{{ topic.title }}</h2>
+				<h2 class="text-[1.5rem] xl:text-xxl text-white">{{ topic.title }}</h2>
 			</NuxtLink>
 		</template>
 	</List>
