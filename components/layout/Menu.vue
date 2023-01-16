@@ -7,7 +7,9 @@
 
 	const topics = computed(() => {
 		return [].concat(...TopicsStore().topics.filter((topic: any) => {
-			return topic.title.toLowerCase().includes(search.value.toLowerCase());
+			return topic.title.toLowerCase().includes(search.value.toLowerCase()) || topic.tags.some((tag: string) => {
+				return tag.toLowerCase().includes(search.value.toLowerCase());
+			});
 		}).map((topic: any) => {
 			return [
 				{

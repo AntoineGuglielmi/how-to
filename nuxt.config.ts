@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   },
   indexes: {
     from: [{
-      dirs: ['./store']
+      dirs: ['./store', './data']
     }]
   },
   postcss: {
