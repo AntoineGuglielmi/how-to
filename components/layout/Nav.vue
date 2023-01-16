@@ -13,7 +13,7 @@ const navLinks = [
 			<div class="flex justify-between">
 				<div class="flex gap-6 items-center">
 					<NuxtLink to="/">
-						<p class="text-xl">Home</p>
+						<p class="text-xl"><Icon name="ic:round-home" /></p>
 					</NuxtLink>
 					<Menu/>
 				</div>
