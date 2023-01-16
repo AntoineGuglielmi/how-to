@@ -51,7 +51,7 @@
 
 	<div
 		v-if="show"
-		class="absolute top-[calc(100%+2rem)] bg-howToPurple-700/25 rounded-[0.25rem] shadow-reg w-full max-w-[600px] animate-menu backdrop-blur-[9px]"
+		class="absolute top-[calc(100%+2rem)] bg-howToPurple-700/50 rounded-[0.25rem] shadow-reg w-full max-w-[600px] animate-menu backdrop-blur-[9px]"
 		@focusout="blur"
 	>
 		<ul>

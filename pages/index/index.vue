@@ -11,7 +11,7 @@
 	</Head>
 	<Hero />
 	<List
-		class="flex flex-col gap-4"
+		class="masonry sm:masonry-sm md:masonry-md"
 		:items="topics"
 		itemsNick="topic"
 	>
@@ -20,7 +20,7 @@
 				:to="topic.to"
 				class="block bg-black/25 p-8 rounded-[0.25rem]"
 			>
-				<h2 class="text-[1.5rem] lg:text-[3rem] text-white text-center lg:text-left">{{ topic.title }}</h2>
+				<h2 class="text-[1.5rem] lg:text-[3rem] text-white text-center lg:text-left font-thin">{{ topic.title }}</h2>
 			</NuxtLink>
 		</template>
 	</List>

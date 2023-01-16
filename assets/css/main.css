@@ -12,3 +12,7 @@
 code {
   @apply font-code whitespace-pre-wrap text-[0.9rem] text-white/75
 }
+
+#__nuxt {
+  @apply bg-gradient-to-b from-howToPurple-900 to-howToBrown-900 min-h-screen flow-root font-nunito text-white pb-[5rem] bg-fixed relative
+}

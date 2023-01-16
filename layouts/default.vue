@@ -1,10 +1,10 @@
-<script lang="ts" setup>
+<script	lang="ts"	setup>
 
 </script>
 
 <template>
-	<Nav />
-  <Container>
-		<slot />
+	<Nav/>
+	<Container>
+		<slot/>
 	</Container>
 </template>
