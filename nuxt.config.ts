@@ -7,21 +7,25 @@ export default defineNuxtConfig({
     'nuxt-icon'
   ],
   components: {
-    "dirs": [
+    'dirs': [
       {
-        "path": "~/components/layout",
-        "global": true
+        'path': '~/components/layout',
+        'global': true
       },
       {
-        "path": "~/components/howto",
-        "global": true
+        'path': '~/components/howto',
+        'global': true
+      },
+      {
+        'path': '~/components/topics',
+        'global': true
       },
       // "~/components"
     ]
   },
   indexes: {
     from: [{
-      dirs: ['./store', './data']
+      dirs: ['./store', './data', './composables']
     }]
   },
   postcss: {

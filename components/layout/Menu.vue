@@ -2,27 +2,14 @@
 
 	import { TopicsStore } from '~/store';
 
+	const {
+		getTopicsBySearch
+	} = TopicsStore();
+
 	const show = ref(false);
 	const search = ref('');
 
-	const topics = computed(() => {
-		return [].concat(...TopicsStore().topics.filter((topic: any) => {
-			return topic.title.toLowerCase().includes(search.value.toLowerCase()) || topic.tags.some((tag: string) => {
-				return tag.toLowerCase().includes(search.value.toLowerCase());
-			});
-		}).map((topic: any) => {
-			return [
-				{
-					type: 'sepa',
-					value: ''
-				},
-				{
-					type: 'topic',
-					value: topic
-				}
-			];
-		}));
-	});
+	const topics = getTopicsBySearch(search.value);
 
 	const link = ref(null);
 	const button = ref(null);
@@ -70,18 +57,13 @@
 				:key="index"
 			>
 				<NuxtLink
-					v-if="topic.type === 'topic'"
 					@click="clickLink"
-					:to="topic.value.to"
-					class="block p-4"
+					:to="topic.to"
+					class="block p-4 border-t border-t-white/25"
 					ref="link"
 				>
-					<p>{{ topic.value.title }}</p>
+					<p>{{ topic.title }}</p>
 				</NuxtLink>
-				<div
-					v-else
-					class="h-[1px] bg-white/25"
-				></div>
 			</li>
 		</ul>
 	</div>

@@ -1,33 +1,58 @@
 <script lang="ts" setup>
 	import { TopicsStore } from '~/store';
+	import { useTopicsFilter } from '~/composables';
+
+	const topicFilter = useTopicsFilter();
+
 	const {
-		topics
+		tags,
+		setTag
+	} = topicFilter;
+
+	const {
+		topics: topicsRaw
 	} = TopicsStore();
+
+	const topics = computed(() => {
+		return topicsRaw.filter((topic: any) => {
+			return tags.value.length ? topic.tags.some((tag: string) => {
+				return tags.value.includes(tag);
+			}) : true;
+		})
+	});
 </script>
 
 <template>
+
 	<Head>
 		<Title>How to</Title>
 	</Head>
+
 	<Hero />
+
+	<div class="mb-[1rem]" v-if="tags.length">
+		Topics corresponding to tags
+		<ul class="inline-flex gap-1">
+			<li
+				v-for="(tag, index) in tags"
+				:key="index"
+			>
+				<button
+					class="border border-white/50 px-2 py-0.5 rounded-full"
+					@click="setTag(tag)"
+				>{{ tag }}
+					<span><Icon name="material-symbols:close" /></span>
+				</button>
+			</li>
+		</ul>.</div>
+
 	<List
-		class="masonry sm:masonry-sm md:masonry-md"
+		class="gap-6"
 		:items="topics"
 		itemsNick="topic"
 	>
 		<template v-slot="{ topic }">
-			<NuxtLink
-				:to="topic.to"
-				class="block bg-black/25 p-8 rounded-[0.25rem]"
-			>
-				<h2 class="mb-2 text-[1.5rem] lg:text-[3rem] text-white text-center lg:text-left font-thin">{{ topic.title }}</h2>
-				<ul class="flex gap-[0.75em] justify-center lg:justify-start text-[0.9rem]">
-					<li
-					v-for="(tag, index) in topic.tags"
-					:key="index"
-				><span class="border border-white/50 py-[0.125em] px-[0.5em] rounded-full text-white/50 text-[0.8em]">{{ tag }}</span></li>
-				</ul>
-			</NuxtLink>
+			<TopicIndex :topic="topic" :filter="topicFilter" />
 		</template>
 	</List>
 
