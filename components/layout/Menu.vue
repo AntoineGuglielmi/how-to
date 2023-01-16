@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 
 	import { TopicsStore } from '~/store';
+	import { Ref } from '@vue/reactivity';
 
 	const {
 		getTopicsBySearch
@@ -9,19 +10,18 @@
 	const show = ref(false);
 	const search = ref('');
 
-	const topics = getTopicsBySearch(search.value);
+	const topics = computed(() => {
+		return getTopicsBySearch(search.value);
+	});
 
-	const link = ref(null);
-	const button = ref(null);
+	const button: Ref<HTMLElement|null> = ref(null);
 
 	const blur = (event: any) => {
 		!event.relatedTarget && (show.value = false);
 	}
 
 	const clickLink = () => {
-		if (button !== null) {
-			button.value.focus();
-		}
+		button.value?.focus();
 		show.value = !show.value;
 		search.value = '';
 	}
@@ -60,7 +60,6 @@
 					@click="clickLink"
 					:to="topic.to"
 					class="block p-4 border-t border-t-white/25"
-					ref="link"
 				>
 					<p>{{ topic.title }}</p>
 				</NuxtLink>
