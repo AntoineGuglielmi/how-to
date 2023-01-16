@@ -3,7 +3,8 @@ export default defineNuxtConfig({
   modules: [
     'nuxt-indexes-ts',
     'nuxt-reactive-form',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    'nuxt-icon'
   ],
   components: {
     "dirs": [
