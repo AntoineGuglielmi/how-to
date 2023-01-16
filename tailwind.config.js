@@ -20,7 +20,7 @@ module.exports = {
         }
       },
       fontSize: {
-        xxl: '2rem'
+        xlg: '2rem'
       },
       fontFamily: {
         'nunito': 'Nunito, sans-serif',

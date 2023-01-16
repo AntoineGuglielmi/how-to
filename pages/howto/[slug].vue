@@ -18,7 +18,7 @@
 	<Head>
 		<Title>How to: {{ metaTitle }}</Title>
 	</Head>
-	<Title1>{{ title }}</Title1>
+	<Title1 class="text-center lg:text-left">{{ title }}</Title1>
 	<component
 		:is="component"
 	/>

@@ -51,14 +51,14 @@
 
 	<div
 		v-if="show"
-		class="absolute top-[calc(100%+2rem)] bg-howToPurple-700 rounded-[0.25rem] shadow-reg w-full max-w-[450px] animate-menu"
+		class="absolute top-[calc(100%+2rem)] bg-howToPurple-700/25 rounded-[0.25rem] shadow-reg w-full max-w-[600px] animate-menu backdrop-blur-[9px]"
 		@focusout="blur"
 	>
 		<ul>
 			<li>
 				<input
 					type="search"
-					placeholder="Search for subject..."
+					placeholder="Search for topic..."
 					v-model="search"
 					class="bg-transparent block p-4 outline-0 w-full"
 				>

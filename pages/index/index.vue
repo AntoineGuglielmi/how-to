@@ -20,7 +20,7 @@
 				:to="topic.to"
 				class="block bg-black/25 p-8 rounded-[0.25rem]"
 			>
-				<h2 class="text-[1.5rem] xl:text-xxl text-white">{{ topic.title }}</h2>
+				<h2 class="text-[1.5rem] lg:text-[3rem] text-white text-center lg:text-left">{{ topic.title }}</h2>
 			</NuxtLink>
 		</template>
 	</List>
