@@ -10,6 +10,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        'menu': 'menu 0.15s linear',
+      },
+      keyframes: {
+        menu: {
+          '0%': { transform: 'translateY(-7px)', opacity: 0 },
+          '100%': { transform: 'translateY(0)', opacity: 1 },
+        }
+      },
       fontSize: {
         xxl: '2rem'
       },

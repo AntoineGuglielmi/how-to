@@ -54,7 +54,7 @@
 
 	<div
 		v-if="show"
-		class="absolute top-[calc(100%+15px)] bg-howToPurple-900 border border-white/25 rounded-[0.25rem] shadow-reg w-[calc(full-1rem)] max-w-[450px]"
+		class="absolute top-[calc(100%+15px)] bg-howToPurple-900 rounded-[0.25rem] shadow-reg w-[calc(full-1rem)] max-w-[450px] animate-menu"
 		@focusout="blur"
 	>
 		<ul>
@@ -79,7 +79,10 @@
 				>
 					<p>{{ topic.value.title }}</p>
 				</NuxtLink>
-				<div v-else class="h-[1px] bg-white/25"></div>
+				<div
+					v-else
+					class="h-[1px] bg-white/25"
+				></div>
 			</li>
 		</ul>
 	</div>
