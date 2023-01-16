@@ -1,38 +1,29 @@
 import { defineStore } from 'pinia';
+import { Topics } from '~/data';
+import { Ref } from '@vue/reactivity';
 
 interface ITopicsStore {
-  topics: Array<any>;
+  topics: Ref<Array<any>>;
   getTopicFromRoute: any;
 }
 
 export const TopicsStore = defineStore('topics', (): ITopicsStore => {
-  const topics = [
-    {
-      title: 'Import and use Google fonts in Nuxt3/Tailwind project',
-      component: 'GoogleFont',
+  const topics = ref(Topics.map((topic: any) => {
+    return {
+      ...topic,
       to: {
         name: 'howto-slug',
         params: {
-          slug: 'import-and-use-google-fonts-nuxt3-tailwind',
-        }
-      }
-    },
-    {
-      title: 'Fill Pinia store on server side and use it on client side',
-      component: 'ServerStoreClient',
-      to: {
-        name: 'howto-slug',
-        params: {
-          slug: 'fill-store-server-use-client',
+          slug: topic.slug
         }
       }
     }
-  ];
+  }));
 
   const getTopicFromRoute = computed(() => {
     return (route: any) => {
-      return topics.filter((topic: any) => {
-        return route.params.slug === topic.to.params.slug;
+      return topics.value.filter((topic: any) => {
+        return route.params.slug === topic.slug;
       })[0];
     }
   });
