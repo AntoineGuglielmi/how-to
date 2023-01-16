@@ -46,15 +46,12 @@
 		class="flex gap-0.5 items-center border border-white/25 rounded-[0.25rem] p-2 text-[1.25rem]"
 		ref="button"
 	>
-<!--		<span class="h-1 w-1 bg-white block rounded-full"></span>-->
-<!--		<span class="h-1 w-1 bg-white block rounded-full"></span>-->
-<!--		<span class="h-1 w-1 bg-white block rounded-full"></span>-->
 		<Icon name="ph:dots-six-vertical-bold" />
 	</button>
 
 	<div
 		v-if="show"
-		class="absolute top-[calc(100%+15px)] bg-howToPurple-900 rounded-[0.25rem] shadow-reg w-[calc(full-1rem)] max-w-[450px] animate-menu"
+		class="absolute top-[calc(100%+2rem)] bg-howToPurple-700 rounded-[0.25rem] shadow-reg w-full max-w-[450px] animate-menu"
 		@focusout="blur"
 	>
 		<ul>
@@ -86,4 +83,5 @@
 			</li>
 		</ul>
 	</div>
+
 </template>

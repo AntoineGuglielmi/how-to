@@ -10,7 +10,7 @@ const navLinks = [
 <template>
   <nav class="py-4 text-white shadow-reg sticky top-0 bg-howToPurple-900 z-50">
 		<Container>
-			<div class="flex justify-between">
+			<div class="flex justify-between relative" id="nav--content">
 				<div class="flex gap-6 items-center">
 					<NuxtLink to="/">
 						<p class="text-xl"><Icon name="ic:round-home" /></p>
