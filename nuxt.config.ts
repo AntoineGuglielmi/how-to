@@ -4,7 +4,8 @@ export default defineNuxtConfig({
     'nuxt-indexes-ts',
     'nuxt-reactive-form',
     '@pinia/nuxt',
-    'nuxt-icon'
+    'nuxt-icon',
+    '@nuxt/content'
   ],
   components: {
     'dirs': [
@@ -35,4 +36,15 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
+  content: {
+    // https://content.nuxtjs.org/api/configuration
+    highlight: {
+      theme: {
+        // Default theme (same as single string)
+        default: 'material-palenight',
+        // Theme used if `html.dark`
+        dark: 'github-dark',
+      }
+    }
+  },
 })
