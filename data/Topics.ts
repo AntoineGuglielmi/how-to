@@ -10,5 +10,11 @@ export const Topics = [
     component: 'ServerStoreClient',
     slug: 'fill-pinia-store-on-server-and-use-in-client',
     tags: ['Pinia', 'Store']
+  },
+  {
+    title: 'Create a Pinia store in Nuxt3 composition API',
+    component: 'PiniaStore',
+    slug: 'create-pinia-store-nuxt3-composition-api',
+    tags: ['Pinia', 'Store', 'Nuxt3']
   }
 ];
