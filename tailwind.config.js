@@ -9,6 +9,18 @@ module.exports = {
     "./app.vue",
   ],
   theme: {
+    typography: {
+      default: {
+        css: {
+          'code::before': {
+            content: '""',
+          },
+          'code::after': {
+            content: '""',
+          },
+        },
+      },
+    },
     extend: {
       animation: {
         'menu': 'menu 0.15s linear',
@@ -68,5 +80,6 @@ module.exports = {
   },
   plugins: [
     require('tailwind-scrollbar')({ nocompatible: true }),
+    require(`@tailwindcss/typography`)
   ]
 }

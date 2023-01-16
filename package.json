@@ -8,6 +8,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/content": "^2.3.0",
     "autoprefixer": "^10.4.13",
     "nuxt": "3.0.0",
     "nuxt-icon": "^0.2.5",
@@ -16,6 +17,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",
+    "@tailwindcss/typography": "^0.5.9",
     "nuxt-indexes-ts": "^1.1.0",
     "nuxt-reactive-form": "^1.2.4",
     "tailwind-scrollbar": "^2.1.0"
