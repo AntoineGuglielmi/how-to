@@ -1,15 +1,17 @@
 <script lang="ts" setup>
-import { useTopicsFilter } from '~/composables';
+
 const navLinks = [
 	// {
 	// 	text: 'About',
 	// 	href: '/about'
 	// }
 ];
-const topicsFilter = useTopicsFilter();
+
+const topicsTagFilter = inject('topicsTagFilter');
+
 const {
 	topTags
-} = topicsFilter;
+} = topicsTagFilter;
 </script>
 
 <template>
@@ -24,34 +26,40 @@ const {
 
 					<Menu/>
 
-<!--					<div>-->
-<!--						Top tags:-->
-<!--						<List-->
-<!--							:items="topTags(4)"-->
-<!--							itemsNick="pair"-->
-<!--							:listStyle="{-->
-
-<!--							}"-->
-<!--						>-->
-<!--							<template v-slot="{ pair }">-->
-<!--								<TopicTag-->
-<!--									:tag="pair[0]"-->
-<!--									:reactive="topicsFilter"-->
-<!--								/>-->
-<!--							</template>-->
-<!--						</List>-->
-<!--					</div>-->
+					<div class="flex items-center">
+						Top tags:
+						<List
+							:items="topTags(4)"
+							itemsNick="pair"
+							:listStyle="{
+								'flex gap-1 ml-1 items-center': true
+							}"
+						>
+							<template v-slot="{ pair }">
+								<TopicTag
+									:tag="pair[0]"
+									:reactive="topicsTagFilter"
+								/>
+							</template>
+						</List>
+					</div>
 
 				</div>
 
-				<ul v-if="navLinks.length" class="flex gap-4">
-					<li
-						v-for="(link, index) in navLinks"
-						:key="index"
+				<List
+					v-if="navLinks.length"
+					:items="navLinks"
+					itemsNick="link"
+					:listStyle="{
+						'flex gap-4 items-center': true
+					}"
+				>
+					<template
+						v-slot="{ link }"
 					>
 						<NuxtLink :to="link.to">{{ link.text }}</NuxtLink>
-					</li>
-				</ul>
+					</template>
+				</List>
 			</div>
 		</Container>
 	</nav>

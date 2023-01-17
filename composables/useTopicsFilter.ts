@@ -4,10 +4,6 @@ import {
 } from '@vue/reactivity';
 import { TopicsStore } from '~/store';
 
-const {
-  topics
-} = TopicsStore();
-
 interface ITopicsFilter {
   tags: Ref<Array<string>>;
   tagsCount: ComputedRef<Array<[string,number]>>;
@@ -16,6 +12,10 @@ interface ITopicsFilter {
 }
 
 export const useTopicsFilter = (): ITopicsFilter => {
+
+  const {
+    topics
+  } = TopicsStore();
 
   const tags: Ref<Array<string>> = ref([]);
 
