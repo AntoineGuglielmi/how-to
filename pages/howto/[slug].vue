@@ -16,7 +16,7 @@
 
 <template>
 	<Head>
-		<Title>How to: {{ metaTitle }}</Title>
+		<Title>How to {{ metaTitle }}</Title>
 	</Head>
 	<Title1 class="text-center lg:text-left">{{ title }}</Title1>
 	<component

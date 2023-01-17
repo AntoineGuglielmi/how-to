@@ -43,6 +43,7 @@ const copy = () => {
 			<div class="prose" ref="code">
 				<ContentDoc
 					:path="content"
+					:head="false"
 				/>
 			</div>
 
