@@ -35,7 +35,7 @@ const copy = () => {
 <!--				@click.prevent="copy"-->
 <!--			>Copy</button>-->
 		</header>
-		<div class="overflow-x-scroll scrollbar scrollbar-h-[4px] scrollbar-thumb-howToPurple-700 scrollbar-track-howToPurple-800 pb-2 scrollbar-rounded-[2px]">
+		<div class="overflow-x-scroll scrollbar scrollbar-h-[3px] scrollbar-thumb-white/50 scrollbar-track-rounded scrollbar-thumb-rounded scrollbar-track-black/75 pb-2 scrollbar-rounded-[2px]">
 <!--			<code-->
 <!--				ref="code"-->
 <!--			>{{ getCode(content) }}</code>-->

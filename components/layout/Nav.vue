@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 
+const displayTopTags = ref(false);
+
 const navLinks = [
 	// {
 	// 	text: 'About',
@@ -26,7 +28,10 @@ const {
 
 					<Menu/>
 
-					<div class="flex items-center">
+					<div
+						v-if="displayTopTags"
+						class="flex items-center"
+					>
 						Top tags:
 						<List
 							:items="topTags(4)"
