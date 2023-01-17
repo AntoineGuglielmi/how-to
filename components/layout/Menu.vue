@@ -2,6 +2,7 @@
 
 	import { TopicsStore } from '~/store';
 	import { Ref } from '@vue/reactivity';
+	import { onMounted } from '@vue/runtime-core';
 
 	const {
 		getTopicsBySearch
@@ -15,15 +16,27 @@
 	});
 
 	const button: Ref<HTMLElement|null> = ref(null);
+	const links: Ref<Array<HTMLElement>> = ref([]);
+	const inputSearch: Ref<HTMLElement|null> = ref(null);
 
-	const blur = (event: any) => {
-		!event.relatedTarget && (show.value = false);
+	const blur = async (event: any) => {
+		const isLink = links.value.some(link => {
+			return link.$el === event.relatedTarget;
+		});
+		const isInput = (inputSearch.value === event.relatedTarget);
+		if (!isLink && !isInput) {
+			show.value = false;
+		}
+		return;
 	}
 
 	const clickLink = () => {
-		button.value?.focus();
 		show.value = !show.value;
 		search.value = '';
+	}
+
+	const magnifyingClicked = async () => {
+		show.value = !show.value;
 	}
 
 </script>
@@ -32,21 +45,25 @@
   <button
 		@click="show = !show"
 		@blur="blur"
-		class="flex gap-0.5 items-center border border-white/25 rounded-[0.25rem] p-2 text-[1.25rem]"
+		class="flex gap-0.5 items-center"
 		ref="button"
 	>
-		<Icon name="ph:dots-six-vertical-bold" />
+		<Icon name="heroicons-solid:magnifying-glass" />
+<!--		<Icon name="material-symbols:manage-search-rounded" />-->
+<!--		<Icon name="ph:dots-six-vertical-bold" />-->
 	</button>
 
 	<div
-		v-if="show"
-		class="absolute top-[calc(100%+2rem)] bg-howToPurple-700/50 rounded-[0.25rem] shadow-reg w-full max-w-[600px] animate-menu backdrop-blur-[9px]"
+		v-show="show"
+		class="absolute top-[calc(100%+2rem)] bg-howToPurple-700/50 rounded-[0.25rem] shadow-reg w-full max-w-[600px] animate-menu backdrop-blur-[9px] text-[1rem]"
 		@focusout="blur"
 	>
 		<ul>
 			<li>
 				<input
+					ref="inputSearch"
 					type="search"
+					@blur="blur"
 					placeholder="Search for topic..."
 					v-model="search"
 					class="bg-transparent block p-4 outline-0 w-full"
@@ -57,6 +74,7 @@
 				:key="index"
 			>
 				<NuxtLink
+					ref="links"
 					@click="clickLink"
 					:to="topic.to"
 					class="block p-4 border-t border-t-white/25"

@@ -20,10 +20,10 @@ const {
   <nav class="sticky top-0 py-4 text-white shadow-reg bg-howToPurple-900 z-50">
 		<Container>
 			<div class="flex justify-between relative">
-				<div class="flex gap-6 items-center">
+				<div class="flex gap-6 items-center text-[1.75em]">
 
 					<NuxtLink to="/">
-						<p class="text-xl"><Icon name="ic:round-home" /></p>
+						<p class=""><Icon name="ic:round-home" /></p>
 					</NuxtLink>
 
 					<Menu/>
