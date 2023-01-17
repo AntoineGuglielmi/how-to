@@ -1,10 +1,15 @@
 <script lang="ts" setup>
+import { useTopicsFilter } from '~/composables';
 const navLinks = [
 	// {
 	// 	text: 'About',
 	// 	href: '/about'
 	// }
-]
+];
+const topicsFilter = useTopicsFilter();
+const {
+	topTags
+} = topicsFilter;
 </script>
 
 <template>
@@ -12,11 +17,33 @@ const navLinks = [
 		<Container>
 			<div class="flex justify-between relative">
 				<div class="flex gap-6 items-center">
+
 					<NuxtLink to="/">
 						<p class="text-xl"><Icon name="ic:round-home" /></p>
 					</NuxtLink>
+
 					<Menu/>
+
+<!--					<div>-->
+<!--						Top tags:-->
+<!--						<List-->
+<!--							:items="topTags(4)"-->
+<!--							itemsNick="pair"-->
+<!--							:listStyle="{-->
+
+<!--							}"-->
+<!--						>-->
+<!--							<template v-slot="{ pair }">-->
+<!--								<TopicTag-->
+<!--									:tag="pair[0]"-->
+<!--									:reactive="topicsFilter"-->
+<!--								/>-->
+<!--							</template>-->
+<!--						</List>-->
+<!--					</div>-->
+
 				</div>
+
 				<ul v-if="navLinks.length" class="flex gap-4">
 					<li
 						v-for="(link, index) in navLinks"

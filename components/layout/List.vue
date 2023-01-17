@@ -1,10 +1,10 @@
 <script lang="ts" setup>
   const props = withDefaults(defineProps<{
-		items: any,
-		itemsNick?: string,
+		items: any;
+		itemsNick?: string;
 		listStyle?: {
 			[key: string]: boolean
-		}
+		};
 	}>(), {
 		itemsNick: 'item',
 		listStyle: {
@@ -13,9 +13,10 @@
 	});
 
 	const bound = computed(() => {
-		return (thing: any) => {
+		return (thing: any, index: number) => {
 			return {
-				[props.itemsNick]: thing
+				[props.itemsNick]: thing,
+				index
 			}
 		}
 	});
@@ -25,8 +26,11 @@
 	<ul
 		:class="listStyle"
 	>
-		<li v-for="item in items">
-			<slot v-bind="bound(item)"/>
+		<li
+			v-for="(item, index) in items"
+			:key="index"
+		>
+			<slot v-bind="bound(item, index)"/>
 		</li>
 	</ul>
 </template>

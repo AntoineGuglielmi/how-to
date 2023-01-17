@@ -6,7 +6,6 @@
 
 	const {
 		tags,
-		setTag
 	} = topicFilter;
 
 	const {
@@ -30,21 +29,24 @@
 
 	<Hero />
 
-	<div class="mb-[1rem]" v-if="tags.length">
-		Topics corresponding to tags
-		<ul class="inline-flex gap-1">
-			<li
-				v-for="(tag, index) in tags"
-				:key="index"
-			>
-				<button
-					class="border border-white/50 px-2 py-0.5 rounded-full"
-					@click="setTag(tag)"
-				>{{ tag }}
-					<span><Icon name="material-symbols:close" /></span>
-				</button>
-			</li>
-		</ul>.</div>
+	<div class="mb-[1rem] text-center lg:text-left" v-if="tags.length">
+		Your seeing a selection of topics corresponding to following tags:
+		<List
+			itemsNick="tag"
+			:items="tags"
+			:listStyle="{
+				'flex justify-center mt-1 lg:mt-0 lg:inline-flex gap-2 ml-2': true
+			}"
+		>
+			<template v-slot="{ tag }">
+				<TopicTag
+					:close="true"
+					:tag="tag"
+					:reactive="topicFilter"
+				/>
+			</template>
+		</List>
+	</div>
 
 	<List
 		class="gap-6"
@@ -52,7 +54,10 @@
 		itemsNick="topic"
 	>
 		<template v-slot="{ topic }">
-			<TopicIndex :topic="topic" :filter="topicFilter" />
+			<TopicIndex
+				:topic="topic"
+				:filter="topicFilter"
+			/>
 		</template>
 	</List>
 
