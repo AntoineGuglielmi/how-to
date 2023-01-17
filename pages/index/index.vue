@@ -1,12 +1,11 @@
 <script lang="ts" setup>
 	import { TopicsStore } from '~/store';
-	import { useTopicsFilter } from '~/composables';
 
-	const topicFilter = useTopicsFilter();
+	const topicsTagFilter = inject('topicsTagFilter');
 
 	const {
 		tags,
-	} = topicFilter;
+	} = topicsTagFilter;
 
 	const {
 		topics: topicsRaw
@@ -30,7 +29,7 @@
 	<Hero />
 
 	<div class="mb-[1rem] text-center lg:text-left" v-if="tags.length">
-		Your seeing a selection of topics corresponding to following tags:
+		You're seeing a selection of topics corresponding to following tags:
 		<List
 			itemsNick="tag"
 			:items="tags"
@@ -42,7 +41,7 @@
 				<TopicTag
 					:close="true"
 					:tag="tag"
-					:reactive="topicFilter"
+					:reactive="topicsTagFilter"
 				/>
 			</template>
 		</List>
@@ -56,7 +55,7 @@
 		<template v-slot="{ topic }">
 			<TopicIndex
 				:topic="topic"
-				:filter="topicFilter"
+				:filter="topicsTagFilter"
 			/>
 		</template>
 	</List>

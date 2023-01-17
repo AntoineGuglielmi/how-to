@@ -15,13 +15,7 @@ const props = withDefaults(defineProps<{
 const code = ref<null|HTMLElement>(null);
 
 const copy = () => {
-	console.log({
-		code
-	});
 	const copiedText = code.value?.outerText ?? '';
-	console.log({
-		copiedText
-	});
 	const el = document.createElement('textarea');
 	el.value = copiedText;
 	document.body.appendChild(el);
