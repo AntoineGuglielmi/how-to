@@ -74,7 +74,9 @@ module.exports = {
         }
       },
       boxShadow: {
-        reg: '0 0 0.5rem 0 rgba(0,0,0,0.5)'
+        'reg': '0 0 0.5rem 0 rgba(0,0,0,0.5)',
+        'reg-1': '0 0 1rem 0 rgba(0,0,0,0.6)',
+        'reg-2': '0 0 2rem 0 rgba(0,0,0,0.6)'
       }
     },
   },

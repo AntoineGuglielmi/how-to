@@ -51,6 +51,9 @@
 		class="gap-6"
 		:items="topics"
 		itemsNick="topic"
+		:listStyle="{
+			'flex flex-col lg:gap-[3rem]': true
+		}"
 	>
 		<template v-slot="{ topic }">
 			<TopicIndex

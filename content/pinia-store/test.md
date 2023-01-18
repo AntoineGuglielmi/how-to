@@ -1,3 +1,0 @@
-```typescript
-const foo = 'bar';
-```

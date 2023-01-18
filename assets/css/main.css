@@ -1,18 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@100;200;300;400;500;600;700;800;900;1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+.bg-reg {
+  @apply bg-gray-100/10
+}
+
+.howto--content {
+  @apply text-[1.125rem] lg:text-[1.25rem]
+}
+
 .howto--content pre {
-  @apply bg-black/25 rounded-[0.25rem] p-4 overflow-x-scroll scrollbar scrollbar-h-[3px] scrollbar-thumb-white/50 scrollbar-track-black/75 scrollbar-track-rounded-full scrollbar-thumb-rounded-full
+  @apply bg-reg text-[0.9em] rounded-[0.25rem] p-4 overflow-x-scroll scrollbar scrollbar-h-[3px] scrollbar-thumb-white/50 scrollbar-track-black/75 scrollbar-track-rounded-full scrollbar-thumb-rounded-full
 }
 
 .howto--content p code {
-  @apply bg-black/25 py-0.5 px-1 rounded-[0.25rem] text-[0.9em]
+  @apply bg-reg py-1 px-2 rounded-[0.25rem] text-[0.9em]
 }
 
 #__nuxt {
   @apply bg-gradient-to-b from-howToPurple-900 to-howToBrown-900 min-h-screen flow-root font-nunito text-white pb-[5rem] bg-fixed relative
+}
+
+.TopicIndex-padding {
+  @apply px-10 py-14 lg:px-14 lg:py-20
 }
