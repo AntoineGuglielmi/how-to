@@ -28,6 +28,8 @@
 
 	<Hero />
 
+	<NuxtLink to="/aze">Wrong page</NuxtLink>
+
 	<div class="mb-[1rem] text-center lg:text-left" v-if="tags.length">
 		You're seeing a selection of topics corresponding to following tags:
 		<List

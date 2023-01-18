@@ -14,11 +14,6 @@
 
 <template>
 	<NuxtLayout>
-		<Title1>How to... Oops</Title1>
-		<ContentDoc
-			:head="false"
-			class="howto--content prose flex flex-col gap-8"
-			path="404"
-		/>
+		<Error/>
 	</NuxtLayout>
 </template>
