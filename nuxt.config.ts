@@ -14,14 +14,9 @@ export default defineNuxtConfig({
         'global': true
       },
       {
-        'path': '~/components/howto',
-        'global': true
-      },
-      {
         'path': '~/components/topics',
         'global': true
-      },
-      // "~/components"
+      }
     ]
   },
   indexes: {

@@ -4,7 +4,7 @@ Let's have a store:
 import { defineStore } from 'pinia';
 import { Ref } from '@vue/reactivity';
 
-export const CodesStore = defineStore('main', () => {
+export const MainStore = defineStore('main', () => {
 
   // It has to be a ref to be a state
   const storeState: Ref<{ [key: string]: any }> = ref({});
@@ -23,9 +23,9 @@ export const CodesStore = defineStore('main', () => {
 Then create a `./plugins/init.server.ts` file:
 
 ```typescript
-import { CodesStore } from '~/store';
+import { MaintStore } from '~/store';
 
 export default defineNuxtPlugin(async (nuxtApp) => {
-  await CodesStore(nuxtApp.$pinia).init();
+  await MaintStore(nuxtApp.$pinia).init();
 });
 ```

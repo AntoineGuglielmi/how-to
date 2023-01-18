@@ -5,9 +5,6 @@
 	} = TopicsStore();
 	const route = useRoute();
 	const topic = getTopicFromRoute(route);
-	console.log({
-		topic
-	});
 	const title = computed(() => {
 		return topic?.title ?? 'This topic does not exist';
 	});
