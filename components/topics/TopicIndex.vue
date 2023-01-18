@@ -28,7 +28,6 @@
 			:to="topic.to"
 			class="block TopicIndex-padding"
 		>
-<!--			<h2 class="text-[1.5rem] lg:text-[3rem] text-white text-center lg:text-left font-thin" v-html="cutTitle()" />-->
 			<h2 class="text-[1.5rem] lg:text-[3rem] text-white text-center lg:text-left font-thin">{{ topic.title }}</h2>
 
 			<List
