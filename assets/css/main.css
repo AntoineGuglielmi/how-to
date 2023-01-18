@@ -9,7 +9,7 @@
   @apply bg-black/25 rounded-[0.25rem] p-4 overflow-x-scroll scrollbar scrollbar-h-[3px] scrollbar-thumb-white/50 scrollbar-track-black/75 scrollbar-track-rounded-full scrollbar-thumb-rounded-full
 }
 
-.howto--content code {
+.howto--content p code {
   @apply bg-black/25 py-0.5 px-1 rounded-[0.25rem] text-[0.9em]
 }
 
