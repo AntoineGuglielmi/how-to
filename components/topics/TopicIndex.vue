@@ -21,7 +21,7 @@
 
 <template>
 	<div
-		class="bg-gray-100/10 lg:hover:shadow-reg-2 rounded-[0.25rem] cursor-pointer transition-all duration-200"
+		class="bg-gray-100/10 lg:hover:shadow-reg-1 rounded-[0.25rem] cursor-pointer transition-all duration-200 scale-100 lg:hover:scale-[1.005]"
 	>
 
 		<NuxtLink
