@@ -20,6 +20,5 @@
 			class="howto--content prose flex flex-col gap-8"
 			path="404"
 		/>
-		<pre>{{error}}</pre>
 	</NuxtLayout>
 </template>
