@@ -6,19 +6,19 @@
 	const props = defineProps<{
 		error: Object
 	}>();
-
-	console.log({
-		error: props.error
-	});
 </script>
 
 <template>
+	<Head>
+		<Title>Page not found</Title>
+	</Head>
 	<NuxtLayout>
-		<Title1>How to... Oops</Title1>
-		<ContentDoc
-			:head="false"
-			class="howto--content prose flex flex-col gap-8"
-			path="404"
-		/>
+		<Title1 class="text-center lg:text-left flex flex-col">
+			<span class="text-[0.5em]">How to</span>Display a page that does not exist
+		</Title1>
+		<div class="howto--content prose flex flex-col gap-8">
+			<p>Sorry, the page <code>{{ error.url }}</code> does not exist, and we don't have a solution for this issue.</p>
+			<p>You can go back to <NuxtLink href="/">home</NuxtLink>.</p>
+		</div>
 	</NuxtLayout>
 </template>
