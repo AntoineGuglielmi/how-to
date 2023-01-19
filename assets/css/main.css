@@ -5,24 +5,40 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-size: 100%;
+}
+
 .bg-reg {
   @apply bg-gray-100/10
 }
 
+.font-responsive {
+  @apply text-[1rem] lg:text-[1.25rem]
+}
+
+.howto--code {
+  @apply font-code text-[0.9em]
+}
+
 .howto--content {
-  @apply text-[1.125rem] lg:text-[1.25rem]
+  /*@apply text-[1.125rem] lg:text-[1.25rem]*/
 }
 
 .howto--content pre {
-  @apply bg-reg text-[0.9em] rounded-[0.25rem] p-4 overflow-x-scroll scrollbar scrollbar-h-[3px] scrollbar-thumb-white/50 scrollbar-track-black/75 scrollbar-track-rounded-full scrollbar-thumb-rounded-full
+  @apply bg-reg rounded-[0.25rem] p-4 overflow-x-scroll scrollbar scrollbar-h-[3px] scrollbar-thumb-white/50 scrollbar-track-black/75 scrollbar-track-rounded-full scrollbar-thumb-rounded-full
+}
+
+.howto--content code {
+  @apply howto--code
 }
 
 .howto--content p code {
-  @apply bg-reg py-1 px-2 rounded-[0.25rem] text-[0.9em]
+  @apply bg-reg py-[0.14em] px-[0.5em] rounded-[0.25rem] howto--code
 }
 
 #__nuxt {
-  @apply bg-gradient-to-b from-howToPurple-900 to-howToBrown-900 min-h-screen flow-root font-nunito text-white pb-[5rem] bg-fixed relative
+  @apply bg-gradient-to-b from-howToPurple-900 to-howToBrown-900 min-h-screen flow-root font-nunito text-white pb-[5rem] bg-fixed relative font-responsive
 }
 
 .TopicIndex-padding {

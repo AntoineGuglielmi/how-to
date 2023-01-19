@@ -17,10 +17,10 @@ const {
 </script>
 
 <template>
-  <nav class="sticky top-0 py-4 text-white shadow-reg bg-howToPurple-900 z-50">
+  <nav class="sticky top-0 py-4 text-white shadow-reg bg-howToPurple-900 z-50 text-[1.5em]">
 		<Container>
 			<div class="flex justify-between relative">
-				<div class="flex gap-6 items-center text-[1.75em]">
+				<div class="flex gap-6 items-center">
 
 					<NuxtLink to="/">
 						<p class=""><Icon name="ic:round-home" /></p>

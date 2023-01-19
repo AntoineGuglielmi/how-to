@@ -2,7 +2,6 @@
 
 	import { TopicsStore } from '~/store';
 	import { Ref } from '@vue/reactivity';
-	import { onMounted } from '@vue/runtime-core';
 
 	const {
 		getTopicsBySearch
@@ -49,13 +48,11 @@
 		ref="button"
 	>
 		<Icon name="heroicons-solid:magnifying-glass" />
-<!--		<Icon name="material-symbols:manage-search-rounded" />-->
-<!--		<Icon name="ph:dots-six-vertical-bold" />-->
 	</button>
 
 	<div
 		v-show="show"
-		class="absolute top-[calc(100%+2rem)] bg-howToPurple-700/50 rounded-[0.25rem] shadow-reg w-full max-w-[600px] animate-menu backdrop-blur-[9px] text-[1rem]"
+		class="absolute top-[calc(100%+2rem)] bg-howToPurple-700/50 rounded-[0.25rem] shadow-reg w-full animate-menu backdrop-blur-[9px] font-responsive"
 		@focusout="blur"
 	>
 		<ul>

@@ -28,13 +28,13 @@
 			:to="topic.to"
 			class="block TopicIndex-padding"
 		>
-			<h2 class="text-[1.5rem] lg:text-[3rem] text-white text-center lg:text-left font-thin">{{ topic.title }}</h2>
+			<h2 class="text-white text-[1.75em] text-center lg:text-left font-thin">{{ topic.title }}</h2>
 
 			<List
 				:items="topic.tags"
 				itemsNick="tag"
 				:listStyle="{
-					'flex gap-[0.75em] justify-center lg:justify-start text-[0.9rem]': true
+					'flex gap-[0.75em] justify-center lg:justify-start text-[0.75em]': true
 				}"
 			>
 				<template v-slot="{ tag }">

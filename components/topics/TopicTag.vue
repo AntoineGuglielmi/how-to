@@ -28,7 +28,7 @@
 
 <template>
 	<button
-		class="border py-[0.125em] px-[0.5em] rounded-full text-[0.8em]"
+		class="border py-[0.125em] px-[0.5em] rounded-full"
 		:class="tagClasses(tag)"
 		@click.prevent="setTag(tag)"
 	>

@@ -3,5 +3,5 @@
 </script>
 
 <template>
-	<h1 class="text-[3rem] lg:text-[5rem] py-[7rem] lg:py-[10rem] font-thin"><slot /></h1>
+	<h1 class="py-[3em] lg:py-[2em] font-thin text-[3em] lg:text-[4em]"><slot /></h1>
 </template>

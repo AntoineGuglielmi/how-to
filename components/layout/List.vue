@@ -8,7 +8,7 @@
 	}>(), {
 		itemsNick: 'item',
 		listStyle: {
-			'flex flex-col gap-2': true
+			'flex flex-col': true
 		}
 	});
 

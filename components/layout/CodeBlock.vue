@@ -25,7 +25,7 @@ const copy = () => {
 <template>
 	<div class="relative bg-black/25 rounded-[0.25rem] p-4 my-4">
 		<header class="flex">
-			<code class="text-white/50 text-[0.75rem] italic" v-if="fileName">{{ fileName }}</code>
+			<code class="text-white/50 italic" v-if="fileName">{{ fileName }}</code>
 		</header>
 		<div class="overflow-x-scroll scrollbar scrollbar-h-[3px] scrollbar-thumb-white/50 scrollbar-track-rounded scrollbar-thumb-rounded scrollbar-track-black/75 pb-2 scrollbar-rounded-[2px]">
 
