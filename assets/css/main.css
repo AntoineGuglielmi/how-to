@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
+@import './TopicIndex.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -38,9 +40,6 @@ html {
 }
 
 #__nuxt {
-  @apply bg-gradient-to-b from-howToPurple-900 to-howToBrown-900 min-h-screen flow-root font-nunito text-white pb-[5rem] bg-fixed relative font-responsive
+  @apply bg-gradient-to-b from-howToPurple-900 to-howToBrown-900 min-h-screen flow-root font-nunito text-white bg-fixed relative font-responsive
 }
 
-.TopicIndex-padding {
-  @apply px-10 py-14 lg:px-14 lg:py-20
-}

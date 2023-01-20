@@ -21,21 +21,19 @@
 
 <template>
 	<div
-		class="bg-gray-100/10 lg:hover:shadow-reg-1 rounded-[0.25rem] cursor-pointer transition-all duration-200 scale-100 lg:hover:scale-[1.005]"
+		class="TopicIndex-2"
 	>
 
 		<NuxtLink
 			:to="topic.to"
-			class="block TopicIndex-padding"
+			class="block TopicIndex-padding-link-2"
 		>
 			<h2 class="text-white text-[1.75em] text-center lg:text-left font-thin">{{ topic.title }}</h2>
 
 			<List
 				:items="topic.tags"
 				itemsNick="tag"
-				:listStyle="{
-					'flex gap-[0.75em] justify-center lg:justify-start text-[0.75em]': true
-				}"
+				class="flex gap-[0.75em] justify-center lg:justify-start text-[0.75em]"
 			>
 				<template v-slot="{ tag }">
 					<TopicTag

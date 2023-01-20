@@ -29,13 +29,11 @@
 	<Hero />
 
 	<div class="mb-[1rem] text-center lg:text-left" v-if="tags.length">
-		You're seeing a selection of topics corresponding to following tags:
+		{{ topics.length }} topics correspond to following the tags:
 		<List
+			class="flex justify-center mt-1 lg:mt-0 lg:inline-flex gap-2 ml-2"
 			itemsNick="tag"
 			:items="tags"
-			:listStyle="{
-				'flex justify-center mt-1 lg:mt-0 lg:inline-flex gap-2 ml-2': true
-			}"
 		>
 			<template v-slot="{ tag }">
 				<TopicTag
@@ -48,7 +46,7 @@
 	</div>
 
 	<List
-		class="gap-[1.75em] lg:items-start"
+		class="gap-[0.5em]"
 		:items="topics"
 		itemsNick="topic"
 	>
@@ -57,6 +55,9 @@
 				:topic="topic"
 				:filter="topicsTagFilter"
 			/>
+		</template>
+		<template #sepa>
+			<hr class="h-[1px] w-full border-none bg-gradient-to-r from-gray-100/0 via-gray-100/10 to-gray-100/0 lg:from-gray-100/10 lg:to-gray-100/0">
 		</template>
 	</List>
 

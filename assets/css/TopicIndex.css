@@ -1,0 +1,18 @@
+/* TopicIndex */
+
+.TopicIndex-padding-link-1 {
+  @apply px-10 py-14 lg:px-14 lg:py-20
+}
+
+.TopicIndex-padding-link-2 {
+  @apply py-14 lg:py-20
+}
+
+.TopicIndex-1 {
+  @apply bg-gray-100/10 lg:hover:shadow-reg-1 rounded-[0.25rem] cursor-pointer transition-all duration-200 scale-100 lg:hover:scale-[1.005]
+}
+
+.TopicIndex-2
+{
+  @apply cursor-pointer transition-all duration-200 scale-100 lg:hover:pl-[1em] lg:hover:bg-black/10
+}

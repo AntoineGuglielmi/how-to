@@ -28,7 +28,7 @@ export const TopicsStore = defineStore('topics', (): ITopicsStore => {
     return arr;
   }
 
-  const topics = ref(shuffleArray(Topics).map((topic: any) => {
+  const topics = ref(Topics.map((topic: any) => {
     return {
       ...topic,
       to: {

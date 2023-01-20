@@ -36,9 +36,7 @@ const {
 						<List
 							:items="topTags(4)"
 							itemsNick="pair"
-							:listStyle="{
-								'flex gap-1 ml-1 items-center': true
-							}"
+							class="flex gap-1 ml-1 items-center"
 						>
 							<template v-slot="{ pair }">
 								<TopicTag
@@ -55,9 +53,7 @@ const {
 					v-if="navLinks.length"
 					:items="navLinks"
 					itemsNick="link"
-					:listStyle="{
-						'flex gap-4 items-center': true
-					}"
+					class="flex gap-4 items-center"
 				>
 					<template
 						v-slot="{ link }"
