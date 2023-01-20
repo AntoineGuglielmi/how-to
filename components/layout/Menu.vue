@@ -63,6 +63,7 @@
 					@blur="blur"
 					placeholder="Search for topic..."
 					v-model="search"
+					@keyup="search = $event.target.value"
 					class="bg-transparent block p-4 outline-0 w-full"
 				>
 			</li>
