@@ -12,9 +12,9 @@
 		<Container>
 			<List
 				:items="footerLinks"
-				itemsNick="link"
+				nick="link"
 			>
-				<template v-slot="{ link }">
+				<template #link="{ link }">
 					<a
 						:href="link.href"
 						target="_blank"

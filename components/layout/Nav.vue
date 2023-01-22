@@ -3,10 +3,10 @@
 const displayTopTags = ref(false);
 
 const navLinks = [
-	// {
-	// 	text: 'About',
-	// 	href: '/about'
-	// }
+	{
+		text: 'About',
+		href: '/about'
+	}
 ];
 
 const topicsTagFilter = inject('topicsTagFilter');
@@ -35,10 +35,10 @@ const {
 						Top tags:
 						<List
 							:items="topTags(4)"
-							itemsNick="pair"
+							nick="pair"
 							class="flex gap-1 ml-1 items-center"
 						>
-							<template v-slot="{ pair }">
+							<template #pair="{ pair }">
 								<TopicTag
 									:tag="pair[0]"
 									:reactive="topicsTagFilter"
@@ -52,11 +52,11 @@ const {
 				<List
 					v-if="navLinks.length"
 					:items="navLinks"
-					itemsNick="link"
-					class="flex gap-4 items-center"
+					nick="link"
+					class="flex gap-4 items-center font-responsive"
 				>
 					<template
-						v-slot="{ link }"
+						#link="{ link }"
 					>
 						<NuxtLink :to="link.to">{{ link.text }}</NuxtLink>
 					</template>

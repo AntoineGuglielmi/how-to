@@ -38,6 +38,10 @@
 		show.value = !show.value;
 	}
 
+	const populateLinks = (item: HTMLElement) => {
+		links.value.push(item);
+	}
+
 </script>
 
 <template>
@@ -55,8 +59,23 @@
 		class="absolute top-[calc(100%+2rem)] bg-howToPurple-700/50 rounded-[0.25rem] shadow-reg w-full animate-menu backdrop-blur-[9px] font-responsive"
 		@focusout="blur"
 	>
-		<ul>
-			<li>
+
+		<List
+			:items="topics"
+			nick="topic"
+		>
+			<template #topic="{ topic }">
+				<NuxtLink
+					:ref="populateLinks"
+					@click="clickLink"
+					:to="topic.to"
+					class="block p-4 border-t border-t-white/25"
+				>
+					<p>{{ topic.title }}</p>
+				</NuxtLink>
+			</template>
+
+			<template #before>
 				<input
 					ref="inputSearch"
 					type="search"
@@ -66,21 +85,9 @@
 					@keyup="search = $event.target.value"
 					class="bg-transparent block p-4 outline-0 w-full"
 				>
-			</li>
-			<li
-				v-for="(topic, index) in topics"
-				:key="index"
-			>
-				<NuxtLink
-					ref="links"
-					@click="clickLink"
-					:to="topic.to"
-					class="block p-4 border-t border-t-white/25"
-				>
-					<p>{{ topic.title }}</p>
-				</NuxtLink>
-			</li>
-		</ul>
+			</template>
+		</List>
+
 	</div>
 
 </template>

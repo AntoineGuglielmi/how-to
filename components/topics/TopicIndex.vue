@@ -32,10 +32,10 @@
 
 			<List
 				:items="topic.tags"
-				itemsNick="tag"
+				nick="tag"
 				class="flex gap-[0.75em] justify-center lg:justify-start text-[0.75em]"
 			>
-				<template v-slot="{ tag }">
+				<template #tag="{ tag }">
 					<TopicTag
 						:tag="tag"
 						:reactive="filter"

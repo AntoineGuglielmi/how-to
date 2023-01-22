@@ -28,14 +28,14 @@
 
 	<Hero />
 
-	<div class="mb-[1em] text-center lg:text-left border-b border-gray-100/10 pb-[1em]" v-if="tags.length">
+	<div class="mb-[1em] text-center lg:text-left flex items-center" v-if="tags.length">
 		{{ topics.length }} topics correspond to following the tags:
 		<List
 			class="flex justify-center mt-1 lg:mt-0 lg:inline-flex gap-2 ml-2"
-			itemsNick="tag"
+			nick="tag"
 			:items="tags"
 		>
-			<template v-slot="{ tag }">
+			<template #tag="{ tag }">
 				<TopicTag
 					:close="true"
 					:tag="tag"
@@ -48,9 +48,10 @@
 	<List
 		class="gap-[0.5em]"
 		:items="topics"
-		itemsNick="topic"
+		nick="topic"
+		:sepaOutter="11"
 	>
-		<template v-slot="{ topic }">
+		<template #topic="{ topic }">
 			<TopicIndex
 				:topic="topic"
 				:filter="topicsTagFilter"
